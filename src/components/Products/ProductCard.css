@@ -1,0 +1,20 @@
+.product-card {
+    position: relative;
+    z-index: 10;
+    overflow: visible;
+}
+
+.product-shop-button {
+    border-radius: 50px;
+    background-color: black;
+    color: #fff;
+}
+
+.product-offer-label{
+    background-color: aqua;
+    position: absolute;
+    top: 5%;
+    left: -2%;
+    /* transform: translateX(-5%); */
+    z-index: 1500;
+}

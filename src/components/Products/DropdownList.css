@@ -1,0 +1,25 @@
+.dropdown-container {
+    background-color: #F1F4F9;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    border: 1px solid #F2F2F2;
+}
+
+.dropdown-heading {
+    background-color: #fff;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    border: 1px solid #F2F2F2;
+    border-radius: 4px 4px 0px 0px;
+}
+
+.dropdown-heading p {
+    margin: 0;
+    padding: 15px 10px;
+    /* font-size: 14px; */
+    font-weight: 500;
+    color: #333333;
+}
+

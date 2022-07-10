@@ -1,0 +1,14 @@
+.products-page-container {
+    background-color: #F1F4F9;
+    border-radius: 20px 20px 0 0;
+    overflow: hidden;
+    font-family: 'Poppins', sans-serif;
+    /* overflow-y: auto; */
+    /* height: 100vh; */
+    /* z-index: 9999; */
+}
+
+.tagged-products-container, .complete-look-container {
+    background-color: #fff;
+}
+
