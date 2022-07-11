@@ -13,7 +13,6 @@ const Home = () => {
   };
   return (
     <div
-      // style={{ width: "100%", height: "100%", }}
       className="home-container container d-flex flex-column justify-content-center align-items-center"
     >
       <h1>Wishlink</h1>
@@ -38,6 +37,7 @@ const Home = () => {
           Search
         </Button>
       </Link>
+      <p className="mt-3">Names of the available creators = 'a' and 'b' </p>
     </div>
   );
 };

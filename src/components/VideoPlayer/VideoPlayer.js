@@ -125,7 +125,6 @@ const VideoPlayer = (props) => {
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    // videos: state.dashboard.vidos,
     videoLink: state.dashboard.videoLink,
     taggedProducts: state.dashboard.taggedProducts,
     ...ownProps,

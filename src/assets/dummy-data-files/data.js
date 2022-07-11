@@ -71,21 +71,21 @@ export var creatorData = [
                             },
                             {
                                 id: 7,
-                                name: 'T-Shirt',
-                                img: 'https://image.shutterstock.com/image-photo/mens-black-blank-tshirt-templatefrom-600w-1409865368.jpg',
-                                description: 'Black T-Shirt',
-                                oldPrice: '500',
-                                newPrice: '250',
-                                discount: '50%'
-                            },
-                            {
-                                id: 8,
                                 name: 'Bow-Tie',
                                 img: 'https://image.shutterstock.com/image-photo/black-bow-tie-isolated-on-600w-117141808.jpg',
                                 description: 'Black Bow-Tie',
                                 oldPrice: '150',
                                 newPrice: '100',
                                 discount: '33%'
+                            },
+                            {
+                                id: 8,
+                                name: 'T-Shirt',
+                                img: 'https://image.shutterstock.com/image-photo/mens-black-blank-tshirt-templatefrom-600w-1409865368.jpg',
+                                description: 'Black T-Shirt',
+                                oldPrice: '500',
+                                newPrice: '250',
+                                discount: '50%'
                             },
                         ]
                     },
@@ -181,12 +181,12 @@ export var creatorData = [
                         products: [
                             {
                                 id: 16,
-                                name: 'T-Shirt',
-                                img: 'https://image.shutterstock.com/image-photo/mens-black-blank-tshirt-templatefrom-600w-1409865368.jpg',
-                                description: 'Black T-Shirt',
-                                oldPrice: '500',
-                                newPrice: '250',
-                                discount: '50%'
+                                name: 'Bow-Tie',
+                                img: 'https://image.shutterstock.com/image-photo/black-bow-tie-isolated-on-600w-117141808.jpg',
+                                description: 'Black Bow-Tie',
+                                oldPrice: '150',
+                                newPrice: '100',
+                                discount: '33%'
                             },
                             {
                                 id: 17,

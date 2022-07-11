@@ -9,7 +9,7 @@ const ProductsPage = (props) => {
 
   return (
     <div className="w-100 m-0 products-page-container">
-      <div className="px-3 pt-3 tagged-products-container">
+      <div className="px-3 py-3 tagged-products-container">
         <h3>Tagged Products ({taggedProducts.length})</h3>
         <div className="px-2 row">
           {taggedProducts.length > 0 &&

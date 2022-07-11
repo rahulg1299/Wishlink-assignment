@@ -9,6 +9,7 @@ import Navbar from "../../components/Navbar/Navbar";
 import VideoPlayer from "../../components/VideoPlayer/VideoPlayer";
 import Button from "@mui/material/Button";
 import HomeIcon from "@mui/icons-material/Home";
+import LoaderFullPage from "../../helpers/LoaderFullPage";
 
 const Dashboard = (props) => {
   const params = useParams();
@@ -22,7 +23,7 @@ const Dashboard = (props) => {
   return (
     <div>
       {props.isLoading ? (
-        <div>Page still loading...</div>
+        <LoaderFullPage message={"Page Loading..."} />
       ) : props.creatorFound ? (
         <div className="dashboard-container">
           <div className="dashboard-video">
