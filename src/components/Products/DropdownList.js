@@ -1,8 +1,11 @@
 import React, { useState } from "react";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
-import "./DropdownList.css";
 import ProductCard from "./ProductCard";
+import Box from "@mui/material/Box";
+import Collapse from "@mui/material/Collapse";
+import Grid from "@mui/material/Grid";
+import { Typography } from "@mui/material";
 
 const DropdownList = ({ category }) => {
   const [productsDrawerOpen, setProductsDrawerOpen] = useState(false);
@@ -12,30 +15,58 @@ const DropdownList = ({ category }) => {
     setProductsDrawerOpen(!productsDrawerOpen);
   };
   return (
-    <div className="my-2 dropdown-container">
-      <div
-        className="dropdown-heading d-flex justify-content-between align-items-center"
+    <Box
+      sx={{
+        my: 1,
+        backgroundColor: "#F1F4F9",
+        border: "1px solid #F2F2F2",
+        boxSizing: "border-box",
+        overflow: "hidden",
+        borderTopLeftRadius: "4px",
+        borderTopRightRadius: "4px",
+      }}
+    >
+      <Grid
+        container
+        direction="row"
+        justifyContent="space-between"
+        alignItems="center"
+        sx={{
+          backgroundColor: "#fff",
+          p: 2,
+          boxSizing: "border-box",
+          border: "1px solid #F2F2F2",
+          borderTopLeftRadius: "4px",
+          borderTopRightRadius: "4px",
+        }}
         onClick={toggleProductsDrawer}
       >
-        <p>{categoryName}</p>
-        <p>
-          {productsDrawerOpen ? (
-            <KeyboardArrowUpIcon />
-          ) : (
-            <KeyboardArrowDownIcon />
-          )}
-        </p>
-      </div>
-      {productsDrawerOpen ? (
-        <div className="row p-2 dropdown-list">
-          {products.map((product) => (
-            <div className="col-6">
-              <ProductCard product={product} tagged={false} key={product.id} />
-            </div>
-          ))}
-        </div>
-      ) : null}
-    </div>
+        <Typography sx={{ fontFamily: "Poppins", fontWeight: 500 }}>
+          {categoryName}
+        </Typography>
+        {productsDrawerOpen ? (
+          <KeyboardArrowUpIcon />
+        ) : (
+          <KeyboardArrowDownIcon />
+        )}
+      </Grid>
+
+      <Collapse in={productsDrawerOpen}>
+        <Box sx={{ p: 1 }}>
+          <Grid container spacing={4} rowSpacing={0.2} columnSpacing={1}>
+            {products.map((product) => (
+              <Grid item xs={6}>
+                <ProductCard
+                  product={product}
+                  tagged={false}
+                  key={product.id}
+                />
+              </Grid>
+            ))}
+          </Grid>
+        </Box>
+      </Collapse>
+    </Box>
   );
 };
 

@@ -2,10 +2,12 @@ import React, { useState, useEffect } from "react";
 import "./VideoPlayer.css";
 import screenfull from "screenfull";
 import IconButton from "@mui/material/IconButton";
+import Box from "@mui/material/Box";
 import TaggedProducCardSM from "./TaggedProductCardSM";
 import PlayArrowIcon from "@mui/icons-material/PlayArrow";
 import { connect } from "react-redux";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
+import LoaderFullPage from "../../helpers/LoaderFullPage";
 
 const VideoPlayer = (props) => {
   const [isFullscreen, setIsFullScreen] = useState(false);
@@ -64,20 +66,20 @@ const VideoPlayer = (props) => {
   };
 
   return (
-    <div id="video-player-container">
+    <Box id="video-player-container">
       {props.videoLink ? (
-        <div className="video-player-box">
+        <Box sx={{ height: "100%", width: "100%" }}>
           {isFullscreen ? (
-            <div className="video-fullscreen-exit ms-3" onClick={goFullScreen}>
-              <IconButton size="large" aria-label="search" color="inherit">
+            <Box className="video-fullscreen-exit" onClick={goFullScreen}>
+              <IconButton size="large" aria-label="back" color="inherit">
                 <ArrowBackIcon />
               </IconButton>
               Shop My Closet
-            </div>
+            </Box>
           ) : null}
 
           {!isFullscreen ? (
-            <div className="video-play-button">
+            <Box className="video-play-button">
               <IconButton
                 onClick={goFullScreen}
                 className="video-play-button"
@@ -93,7 +95,7 @@ const VideoPlayer = (props) => {
                   }}
                 />
               </IconButton>
-            </div>
+            </Box>
           ) : null}
 
           <video
@@ -109,17 +111,24 @@ const VideoPlayer = (props) => {
           </video>
 
           {isFullscreen && taggedProducts.length > 0 ? (
-            <div className="video-tagged-products d-flex justify-content-start align-items-center">
+            <Box
+              className="video-tagged-products"
+              sx={{
+                display: "flex",
+                justifyContent: "flex-start",
+                alignItems: "center",
+              }}
+            >
               {taggedProducts.map((product) => (
                 <TaggedProducCardSM product={product} key={product.id} />
               ))}
-            </div>
+            </Box>
           ) : null}
-        </div>
+        </Box>
       ) : (
-        <div>Still setIsLoading...</div>
+        <LoaderFullPage message={"Loading video..."} />
       )}
-    </div>
+    </Box>
   );
 };
 

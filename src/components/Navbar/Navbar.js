@@ -31,8 +31,15 @@ const Navbar = (props) => {
   const { name, profilePic, verified } = props.about;
 
   return (
-    <div>
-      <Box className="navbar-container" sx={{ flexGrow: 1 }}>
+    <Box>
+      <Box
+        sx={{
+          flexGrow: 1,
+          backgroundColor: "#fff",
+          height: "60px",
+          width: "100%",
+        }}
+      >
         <ThemeProvider theme={lightTheme}>
           <AppBar position="static" color="primary">
             <Toolbar>
@@ -44,7 +51,7 @@ const Navbar = (props) => {
               <Typography
                 variant="h6"
                 component="div"
-                sx={{ flexGrow: 1, ml: 2, fontFamily: 'Poppins' }}
+                sx={{ flexGrow: 1, ml: 2, fontFamily: "Poppins" }}
               >
                 <img
                   className="navbar-profile-pic me-2"
@@ -63,7 +70,7 @@ const Navbar = (props) => {
           </AppBar>
         </ThemeProvider>
       </Box>
-    </div>
+    </Box>
   );
 };
 

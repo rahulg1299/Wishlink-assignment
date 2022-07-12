@@ -4,10 +4,10 @@ import ProductsPage from "../../components/Products/ProductsPage";
 import { connect } from "react-redux";
 import { useParams, Link } from "react-router-dom";
 import NotFound from "../../helpers/NotFound";
-import "./Dashboard.css";
 import Navbar from "../../components/Navbar/Navbar";
 import VideoPlayer from "../../components/VideoPlayer/VideoPlayer";
 import Button from "@mui/material/Button";
+import Box from "@mui/material/Box";
 import HomeIcon from "@mui/icons-material/Home";
 import LoaderFullPage from "../../helpers/LoaderFullPage";
 
@@ -21,21 +21,37 @@ const Dashboard = (props) => {
   useEffect(() => {}, [props.creatorFound]);
 
   return (
-    <div>
+    <Box>
       {props.isLoading ? (
         <LoaderFullPage message={"Page Loading..."} />
       ) : props.creatorFound ? (
-        <div className="dashboard-container">
-          <div className="dashboard-video">
+        <Box sx={{ height: "100vh", overflowY: "auto", position: "relative" }}>
+          <Box
+            sx={{
+              position: "sticky",
+              top: 0,
+              zIndex: 0,
+              height: "60vh",
+              width: "100%",
+            }}
+          >
             <Navbar />
             <VideoPlayer />
-          </div>
-          <div className="dashboard-products">
+          </Box>
+          <Box
+            sx={{
+              position: "relative",
+              zIndex: 100,
+              backgroundColor: "#F1F4F9",
+              borderTopLeftRadius: "20px",
+              borderTopRightRadius: "20px",
+            }}
+          >
             <ProductsPage />
-          </div>
-        </div>
+          </Box>
+        </Box>
       ) : (
-        <div className="not-found-container">
+        <Box sx={{ backgroundColor: "#fff" }}>
           <Link to={"/"}>
             <Button
               type="submit"
@@ -47,9 +63,9 @@ const Dashboard = (props) => {
             </Button>
           </Link>
           <NotFound />
-        </div>
+        </Box>
       )}
-    </div>
+    </Box>
   );
 };
 
